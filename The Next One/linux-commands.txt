@@ -29,6 +29,10 @@ Instanz öffnen:
 	screen -r mcserver
 
 
+Instanz schliessen:
+	Ctrl + A, then D
+
+
 Geöffnete Instaz sauber beenden:
 	stop
 Danach:
@@ -40,7 +44,7 @@ Instanz hart beenden:
 
 
 Neue MC Instanz erstellen:
-	screen -S mcserver -dm java -Xms8G -Xmx48G -jar neoforge-*.jar nogui
+	screen -S mcserver -dm bash run.sh
 Bedeutung:
 	-S mcserver → Session-Name
 	-dm → „Detached Mode“, läuft im Hintergrund
