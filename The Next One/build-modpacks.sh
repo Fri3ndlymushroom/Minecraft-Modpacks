@@ -1,8 +1,22 @@
-rm -rf build-client build-server
-mkdir build-client build-server
+#!/bin/bash
+set -e
 
-cp source-mods/shared/*.jar build-client/
-cp source-mods/client/*.jar build-client/
+echo "🧹 Ordner löschen..."
+rm -rf modpack-client modpack-server
 
-cp source-mods/shared/*.jar build-server/
-cp source-mods/server/*.jar build-server/
+echo "📁 Ordner neu anlegen..."
+mkdir modpack-client modpack-server
+
+echo "📦 Kopiere shared → client..."
+cp source-mods/shared/*.jar modpack-client/
+
+echo "📦 Kopiere client..."
+cp source-mods/client/*.jar modpack-client/
+
+echo "📦 Kopiere shared → server..."
+cp source-mods/shared/*.jar modpack-server/
+
+echo "📦 Kopiere server..."
+cp source-mods/server/*.jar modpack-server/
+
+echo "✅ Fertig!"

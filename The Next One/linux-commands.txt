@@ -1,0 +1,46 @@
+Tools: 
+	Command window
+		PuTTY
+	Folder
+		WinSCP
+
+
+
+Benutzer wechseln:
+	su - minecraft
+
+
+Zu Minecraft Server navigieren:
+	cd ./opt/minecraft
+
+
+Ordner auflisten: 
+	ls
+
+
+Prüfen welche Java Instanzen laufen:
+	screen -ls
+Typische Ausgabe: 
+	There is a screen on:
+	1234.mcserver	(Detached)
+
+
+Instanz öffnen:
+	screen -r mcserver
+
+
+Geöffnete Instaz sauber beenden:
+	stop
+Danach:
+	exit
+
+
+Instanz hart beenden:
+	screen -S 1234 -X stuff "stop\n"
+
+
+Neue MC Instanz erstellen:
+	screen -S mcserver -dm java -Xms8G -Xmx48G -jar neoforge-*.jar nogui
+Bedeutung:
+	-S mcserver → Session-Name
+	-dm → „Detached Mode“, läuft im Hintergrund
